@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  servie-a:
+    build: ./serviceA
+    container_name: service-a
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+  
+  service-b:
+    build: ./serviceB
+    container_name: service-b
+    ports:
+      - "3030:3030"
+    networks:
+      - app-network
+  
+networks:
+  app-network:
+    driver: bridge
