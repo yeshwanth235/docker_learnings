@@ -1,0 +1,16 @@
+version: '3.8'
+
+services: 
+  api-service:
+    build: ./api-service
+    container_name: api-service
+    port: 
+      - 4040:4040
+  
+  worker-srevice:
+    build: ./worker-service
+    container_name: worker-service
+
+networks:
+  app-network:
+    driver: overlay
